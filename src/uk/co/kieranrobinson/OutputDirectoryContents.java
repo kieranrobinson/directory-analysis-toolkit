@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class OutputDirectoryContents {
+    //Asks user for a directory location and if it exists lists the contents of the directory
     public static void outputDirectoryContents(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter path of directory:");
@@ -13,6 +14,7 @@ public class OutputDirectoryContents {
         outputDirectoryContents(dirPath);
     }
 
+    //Lists the contents of the provided directory to the user
     public static void outputDirectoryContents(String dirPath){
         try (Stream<Path> dir = Files.walk(Paths.get(dirPath),1)){
             dir
@@ -25,7 +27,7 @@ public class OutputDirectoryContents {
         }
     }
 
-
+    //Asks user for a directory location and if it exists lists the contents of the directory and its subdirectories
     public static void outputDirectoryAndSubdirectoryContents(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter path of directory:");
@@ -34,6 +36,7 @@ public class OutputDirectoryContents {
 
     }
 
+    //Lists the contents of the provided directory and its subdirectories to the user
     public static void outputDirectoryAndSubdirectoryContents(String dirPath){
         Path testPath = FileSystems.getDefault().getPath(dirPath);
 
